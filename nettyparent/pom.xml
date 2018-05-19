@@ -11,6 +11,10 @@
     <name>netty-parent</name>
     <!--父项目必须包含该标签-->
     <packaging>pom</packaging>
+    <properties>
+        <netty-server.hostname>localhost</netty-server.hostname>
+        <netty-server.port>8888</netty-server.port>
+    </properties>
     <!-- 引入netty依赖-->
     <dependencies>
         <dependency>
