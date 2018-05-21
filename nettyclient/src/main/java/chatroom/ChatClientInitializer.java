@@ -15,6 +15,7 @@ import io.netty.handler.codec.string.StringEncoder;
 public class ChatClientInitializer extends ChannelInitializer<SocketChannel> {
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         ChannelPipeline pipeline = socketChannel.pipeline();
+        //分割
         pipeline.addLast("frame",new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
         pipeline.addLast("decode",new StringDecoder());//解码器
         pipeline.addLast("encode",new StringEncoder());
